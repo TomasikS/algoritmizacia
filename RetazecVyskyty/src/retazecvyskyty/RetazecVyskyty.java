@@ -21,21 +21,31 @@ public class RetazecVyskyty {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-  String s = "abcdefghaaaaaPPPPPPP";
+  String s = "ab54433Q";
   s=s.toLowerCase();
   int index=0;
-char[] array = new char[26];
- int []polo = new int [26];     
+char[] array = new char[128];
+ int []polo = new int [128];     
       List<Integer> list=new ArrayList<>();   
-        for (char c = 'a'; c <= 'z'; c++) {
-            array[index++] = c;
-        }
+       /// for (char c = 'a'; c <= 'z'; c++) {
+       
+       for (int c = 0; c <= 127; c++)
+       
+            array[index++] = Character.valueOf((char) c);
+       
+           for (int c = 0; c <= 127; c++)
+       
+          System.out.println(array[c]);  
+       
+       
+       
+        //}
       
        for (int i=0;i<polo.length;i++)
       polo[i]=0;
       
         for (int i=0;i<s.length()-1;i++)
-        for (int j=0;j<26;j++)
+        for (int j=0;j<127;j++)
         {
      if ((s.charAt(i)== array[j]) && (s.charAt(i)==s.charAt(i+1))) polo[j]=polo[j]+1;
                   
